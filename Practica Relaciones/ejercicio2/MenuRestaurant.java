@@ -22,10 +22,10 @@ public class MenuRestaurant {
             System.out.print("¿Es una bebida? (true/false): ");
             boolean esBebida = Boolean.parseBoolean(scanner.nextLine());
 
-            // Crear un nuevo objeto Plato
+        
             Plato plato = new Plato(nombrePlato, precioPlato, esBebida);
 
-            // Si no es una bebida, pedir ingredientes
+            //Revisa que sea una bebida o no.
             if (!esBebida) {
                 System.out.print("¿Cuántos ingredientes tiene este plato? ");
                 int cantidadIngredientes = Integer.parseInt(scanner.nextLine());
@@ -42,7 +42,7 @@ public class MenuRestaurant {
                     System.out.print("Unidad de medida: ");
                     String unidadMedida = scanner.nextLine();
 
-                    // Crear un objeto Ingrediente y agregarlo al plato
+             
                     Ingrediente ingrediente = new Ingrediente(nombreIngrediente, cantidadIngrediente, unidadMedida);
                     plato.agregarIngrediente(ingrediente);
                 }
@@ -52,7 +52,7 @@ public class MenuRestaurant {
             platosMenu.add(plato);
         }
 
-        // Mostrar el menú final
+        // Muestra el menu final: 
         System.out.println("\n----- MENÚ DEL RESTAURANTE -----");
         for (Plato plato : platosMenu) {
             System.out.println(plato);
